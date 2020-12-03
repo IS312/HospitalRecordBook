@@ -1,0 +1,32 @@
+﻿@page
+@model HospitalRecordBook.Specializations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">All Specialization Details</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialization[0].SpecializationName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Specialization) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecializationName)
+            </td>
+            <td>
+                <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@item.SpecializationID">Edit</a> |
+                <a asp-page="./Details" class="btn btn-warning" asp-route-id="@item.SpecializationID">Details</a> |
+                <a asp-page="./Delete" class="btn btn-danger" asp-route-id="@item.SpecializationID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

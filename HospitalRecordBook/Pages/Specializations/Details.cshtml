@@ -1,0 +1,24 @@
+﻿@page
+@model HospitalRecordBook.Specializations.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center"> Specialization Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Specialization.SpecializationName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Specialization.SpecializationName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@Model.Specialization.SpecializationID">Edit This Record</a> 
+    
+</div>

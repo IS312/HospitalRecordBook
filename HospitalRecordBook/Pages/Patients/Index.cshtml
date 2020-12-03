@@ -1,0 +1,51 @@
+﻿@page
+@model HospitalRecordBook.Patients.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">View All Patient Details</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient[0].PatientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient[0].Age)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Patient) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@item.PatientID">Edit</a> |
+                <a asp-page="./Details" class="btn btn-warning"  asp-route-id="@item.PatientID">Details</a> |
+                <a asp-page="./Delete"  class="btn btn-danger"  asp-route-id="@item.PatientID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

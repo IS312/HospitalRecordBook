@@ -1,0 +1,57 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="card mb-3">
+            <h3 class="card-header">Specialization</h3>
+            <img style="width:100%;height:200px" src="~/images/specialization.png" />
+            <div class="card-body">
+                <p class="card-text text-center">
+                    <a asp-area="" asp-page="/Specializations/Index" class="btn btn-primary">View All Specializations</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card mb-3">
+            <h3 class="card-header">Patient</h3>
+            <img style="width:100%;height:200px" src="~/images/patient.jpg" />
+            <div class="card-body">
+                <p class="card-text text-center">
+                    <a asp-area="" asp-page="/Patients/Index" class="btn btn-primary">View All Patients</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="card mb-3">
+            <h3 class="card-header">Doctor</h3>
+            <img style="width:100%;height:200px" src="~/images/Docs.jpg" />
+            <div class="card-body">
+                <p class="card-text text-center">
+                    <a asp-area="" asp-page="/Doctors/Index" class="btn btn-primary">View All Doctors</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card mb-3">
+            <h3 class="card-header">Appointments</h3>
+            <img style="width:100%;height:200px" src="~/images/appointment.png" />
+            <div class="card-body">
+                <p class="card-text text-center">
+                    <a asp-area="" asp-page="/Appointments/Index" class="btn btn-primary">View All Appointments</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

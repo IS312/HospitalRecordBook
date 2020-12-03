@@ -1,0 +1,56 @@
+﻿@page
+@model HospitalRecordBook.Doctors.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">View All Doctor</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor[0].DoctorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor[0].Degree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor[0].Specialization)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor[0].Fee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Doctor) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Degree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specialization.SpecializationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fee)
+            </td>
+            <td>
+                <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@item.DoctorID">Edit</a> |
+                <a asp-page="./Details" class="btn btn-warning" asp-route-id="@item.DoctorID">Details</a> |
+                <a asp-page="./Delete" class="btn btn-danger" asp-route-id="@item.DoctorID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
