@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HospitalRecordBook.Migrations
@@ -22,6 +23,8 @@ namespace HospitalRecordBook.Migrations
                 name: "Description",
                 table: "Appointments",
                 nullable: true);
+            var sqlFile = Path.Combine(".\\backups", @"placement_scripts.sql");
+            migrationBuilder.Sql(File.ReadAllText(sqlFile));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
